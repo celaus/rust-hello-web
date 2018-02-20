@@ -36,7 +36,7 @@ phases:
         task: PublishBuildArtifacts@1
         displayName: "Publish Artifact: Release Build"
         inputs:
-          PathtoPublish: ./target/release/j2y.exe
+          PathtoPublish: ./target/release/hello-web.exe
           ArtifactName: drop
           ArtifactType: Container
           TargetPath: "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
@@ -80,14 +80,14 @@ phases:
         displayName: Build Release
 
       - script: |
-          mv ./target/release/j2y ./target/release/j2y-linux
+          mv ./target/release/hello-web ./target/release/hello-web-linux
         displayName: Rename Executable
 
       -
         task: PublishBuildArtifacts@1
         displayName: "Publish Artifact: Release Build"
         inputs:
-          PathtoPublish: ./target/release/j2y-linux
+          PathtoPublish: ./target/release/hello-web-linux
           ArtifactName: drop
           ArtifactType: Container
           TargetPath: "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
@@ -131,14 +131,14 @@ phases:
         displayName: Build Release
 
       - script: |
-          mv ./target/release/j2y ./target/release/j2y-darwin
+          mv ./target/release/hello-web ./target/release/hello-web-darwin
         displayName: Rename Executable
 
       -
         task: PublishBuildArtifacts@1
         displayName: "Publish Artifact: Release Build"
         inputs:
-          PathtoPublish: ./target/release/j2y-darwin
+          PathtoPublish: ./target/release/hello-web-darwin
           ArtifactName: drop
           ArtifactType: Container
           TargetPath: "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
