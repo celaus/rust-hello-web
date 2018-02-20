@@ -1,6 +1,4 @@
-
 extern crate rouille;
-
 
 ///
 /// Returns the default response string for the web server
@@ -23,7 +21,7 @@ fn get_default_response() -> &'static str {
 /// assert_eq!(get_port(), 8080);
 /// ```
 fn get_port() -> i32 {
-    return 8080
+    return 8080;
 }
 
 fn main() {
@@ -33,7 +31,6 @@ fn main() {
         rouille::Response::text(get_default_response())
     });
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -47,7 +44,5 @@ mod tests {
     fn port_is_8080() {
         assert_eq!(get_port(), 8080);
     }
-
-
 
 }
